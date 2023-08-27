@@ -1,0 +1,27 @@
+{
+  "name": "retrosheet-ts",
+  "version": "0.0.1-alpha01",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --skipLibCheck",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@yogesh.github.com:yogeshpaliyal/RetroSheet-TS.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Yogesh Choudhary Paliyal",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node-fetch": "2.6.4",
+    "typescript": "5.2.2"
+  },
+  "dependencies": {
+    "node-fetch": "2.7.0"
+  }
+}
