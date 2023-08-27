@@ -12,6 +12,7 @@ Get Spreadsheet ID from spreadsheet url.
 
 #### Get Data
 ```js
+import { fetchRetrosheetData } from 'retrosheet-ts';
 
 const response = await fetchRetrosheetData("<Spreadsheet ID>", { sheetName: "notess", query: "select * limit 2" })
 ```
@@ -46,7 +47,7 @@ Get form id Form URL
 
 #### Write data
 ```js
-import writeRetrosheetData from "./submit-data";
+import { writeRetrosheetData } from 'retrosheet-ts';
 
 const request = {
     'Title': "test title",
