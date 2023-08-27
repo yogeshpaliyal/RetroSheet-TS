@@ -7,6 +7,7 @@ Thanks to : [Retrosheet by theApache64](https://github.com/theapache64/retroshee
 ### Fetch Google Sheet Data.
 
 #### Get Spreadsheet ID
+Get Spreadsheet ID from spreadsheet url.
 ![get_spreadsheet_id.png](images/get_spreadsheet_id.png)
 
 #### Get Data
@@ -38,6 +39,10 @@ const response = await fetchRetrosheetData("<Spreadsheet ID>", { sheetName: "not
 ### Write Data to Google Sheet.
 
 Follow steps 1 - 4 from [here](https://github.com/theapache64/retrosheet)
+
+#### Get Form ID
+Get form id Form URL
+![get-form-id.png](images%2Fget-form-id.png)
 
 #### Write data
 ```js
