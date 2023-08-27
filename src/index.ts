@@ -1,5 +1,6 @@
 import fetch from "node-fetch";
 import parseCSVText from "./csv-helper";
+import { getFieldMapFromUrl, submitForm } from "./submit-data";
 
 interface FetchGoogleSheetsOption {
     sheetName: string,
@@ -13,7 +14,7 @@ async function fetchData(sheetId: string, options: FetchGoogleSheetsOption) {
         tq: options.query
     });
     try {
-        const response = await fetch(`https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?${queryParams}`);
+        const response = await fetch(`https://docs.google.com/spreadsheets/d/${ sheetId }/gviz/tq?${ queryParams }`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -25,8 +26,26 @@ async function fetchData(sheetId: string, options: FetchGoogleSheetsOption) {
     }
 }
 
-fetchData("1Xu054RgPFdI_MmAaVV6hNUZXSOOgJy9iwrc8vawsS_4", { sheetName: "notess", query: "select * limit 2" }).then((result) => {
-    console.log(result)
-}).catch((e)=> {
+// fetchData("1Xu054RgPFdI_MmAaVV6hNUZXSOOgJy9iwrc8vawsS_4", { sheetName: "notess", query: "select * limit 2" }).then((result) => {
+//     console.log(result)
+// }).catch((e)=> {
+//     console.log(e)
+// })
+
+
+// getFieldMapFromUrl("https://docs.google.com/forms/d/e/1FAIpQLSdYil2Gr5pSgwdi92A-NYEI9n-QQ7qdTRpYilf5ezgmLnXg6A/viewform?usp=sf_link")
+//     .then((result) => {
+//         console.log(result)
+// }).catch((e) => {
+//     console.log(e)
+// })
+
+
+submitForm("1FAIpQLSdYil2Gr5pSgwdi92A-NYEI9n-QQ7qdTRpYilf5ezgmLnXg6A", {
+    'Title': "test title",
+    'Description': 'test Description'
+}).then(async (result) => {
+    console.log(await result.text())
+}).catch((e) => {
     console.log(e)
 })

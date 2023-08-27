@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc --skipLibCheck",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build && node dist/index.js"
+    "start": "npm run build && node dist/index.js",
+    "prepublishOnly": "npm run bui;d"
   },
   "repository": {
     "type": "git",
