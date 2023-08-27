@@ -2,9 +2,9 @@ import fetch from "node-fetch";
 
 const FORM_DATA_SPLIT_1 = "FB_PUBLIC_LOAD_DATA_"
 const FORM_DATA_SPLIT_2 = "</script>"
-const SOLUTION_UPDATE = "Please update retrosheet to latest version."
+const SOLUTION_UPDATE = "Please update RetroSheet-TS to latest version."
 
-export async function getFieldMapFromUrl(formUrl: string) {
+async function getFieldMapFromUrl(formUrl: string) {
     const formRequest = await fetch(formUrl)
     if (formRequest.ok) {
         const htmlBody = await formRequest.text()
