@@ -2,6 +2,14 @@
 
 Thanks to : [Retrosheet by theApache64](https://github.com/theapache64/retrosheet)
 
+## Install
+![NPM](https://img.shields.io/npm/v/retrosheet-ts)
+
+```shell
+npm i retrosheet-ts
+```
+
+
 ## Usage ⌨️
 
 ### Fetch Google Sheet Data.
