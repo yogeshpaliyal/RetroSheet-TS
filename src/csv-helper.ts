@@ -1,4 +1,4 @@
-export  default function parseCSVText(csvText: string): Array<Record<string, string>> {
+export default function parseCSVText(csvText: string): Array<Record<string, string>> {
     const lines = csvText.split('\n');
     const headers = lines[0].split(',').map((item) => (item.startsWith('"') && item.endsWith('"')) ? item.slice(1, -1): item);
 

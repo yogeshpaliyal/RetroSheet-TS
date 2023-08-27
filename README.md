@@ -11,6 +11,7 @@ Thanks to : [Retrosheet by theApache64](https://github.com/theapache64/retroshee
 
 #### Get Data
 ```js
+
 const response = await fetchRetrosheetData("<Spreadsheet ID>", { sheetName: "notess", query: "select * limit 2" })
 ```
 
@@ -40,11 +41,13 @@ Follow steps 1 - 4 from [here](https://github.com/theapache64/retrosheet)
 
 #### Write data
 ```js
+import writeRetrosheetData from "./submit-data";
+
 const request = {
     'Title': "test title",
     'Description': 'test Description'
 }
-submitForm("<FORM_ID>", request)
+writeRetrosheetData("<FORM_ID>", request)
 ```
 **_Note: Keys of request must be the same as Form Field name._**
 

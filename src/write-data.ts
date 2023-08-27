@@ -61,7 +61,7 @@ function throwWrongSplit(key: String) {
 }
 
 
-export async function submitForm(formId: string, formRequest: Record<string, string>) {
+export default async function writeRetrosheetData(formId: string, formRequest: Record<string, string>) {
 // https://docs.google.com/forms/d/e/1FAIpQLSdYil2Gr5pSgwdi92A-NYEI9n-QQ7qdTRpYilf5ezgmLnXg6A/viewform?usp=sf_link
     const viewFormUrl = `https://docs.google.com/forms/d/e/${formId}/viewform`
     const formSubmitUrl = `https://docs.google.com/forms/d/e/${formId}/formResponse`
