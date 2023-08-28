@@ -51,7 +51,7 @@ Follow steps 1 - 4 from [here](https://github.com/theapache64/retrosheet)
 
 #### Get Form ID
 Get form id Form URL
-![get-form-id.png](images%2Fget-form-id.png)
+![get-form-id.png](images/get-form-id.png)
 
 #### Write data
 ```js
