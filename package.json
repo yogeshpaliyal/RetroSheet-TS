@@ -1,8 +1,9 @@
 {
   "name": "retrosheet-ts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "./dist/index.js",
+  "keywords": ["retrosheet", "google sheets", "google forms", "sheets db"],
   "scripts": {
     "build": "tsc --skipLibCheck",
     "test": "echo \"Error: no test specified\" && exit 0",
@@ -16,7 +17,12 @@
   "files": [
     "dist"
   ],
-  "author": "Yogesh Choudhary Paliyal",
+  "homepage": "https://github.com/yogeshpaliyal/RetroSheet-TS",
+  "bugs": {
+    "url": "https://github.com/yogeshpaliyal/RetroSheet-TS/issues",
+    "email": "yogeshpaliyal.foss+retrosheet@gmail.com"
+  },
+  "author": "Yogesh Choudhary Paliyal <yogeshpaliyal.foss+retrosheet@gmail.com> (https://yogeshpaliyal.com)",
   "license": "ISC",
   "devDependencies": {
     "@types/node-fetch": "2.6.4",
