@@ -1,6 +1,6 @@
 {
   "name": "retrosheet-ts",
-  "version": "0.1.3-0",
+  "version": "0.1.3",
   "description": "",
   "main": "./dist/index.js",
   "keywords": [
