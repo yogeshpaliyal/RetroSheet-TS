@@ -5,10 +5,11 @@
   "main": "./dist/index.js",
   "keywords": ["retrosheet", "google sheets", "google forms", "sheets db"],
   "scripts": {
-    "build": "tsc --skipLibCheck",
+    "build": "bun build ./src/index.ts --outdir ./dist && bun run build:declaration",
+    "build:declaration": "tsc --emitDeclarationOnly --project tsconfig.types.json",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "start": "npm run build && node dist/index.js",
-    "prepublishOnly": "npm run build"
+    "start": "bun ./src/index.ts",
+    "prepublishOnly": "bun run build"
   },
   "repository": {
     "type": "git",
