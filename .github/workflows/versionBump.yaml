@@ -28,9 +28,7 @@ jobs:
       - name: 🏗 Checkout Branch
         uses: actions/checkout@v4
         with:
-          ref: $BRANCH
-        env:
-          BRANCH: ${{ inputs.branch }}
+          ref: ${{ inputs.branch }}
       
       - name: Install bun
         uses: oven-sh/setup-bun@v1
