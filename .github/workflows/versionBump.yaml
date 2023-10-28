@@ -22,6 +22,11 @@ jobs:
     steps:
       - name: 🏗 Checkout Branch
         uses: actions/checkout@v4
+
+      - name: Git Add and Commit
+        run: |
+            git config --global user.name 'Yogesh Choudhary Paliyal'
+            git config --global user.email 'yogeshpaliyal@users.noreply.github.com'
       
       - name: Install bun
         uses: oven-sh/setup-bun@v1
