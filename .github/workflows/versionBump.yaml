@@ -1,0 +1,46 @@
+name: Bump App Version
+on: 
+  workflow_dispatch:
+    inputs:
+      type:
+        description: 'Bump type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+        - patch
+        - minor
+        - major
+        - premajor
+        - preminor
+        - prepatch
+        - prerelease
+      branch:
+        description: 'Branch'
+        required: true
+        type: string
+        default: 'master'
+    
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Checkout Branch
+        uses: actions/checkout@v4
+        with:
+          ref: $BRANCH
+        env:
+          BRANCH: ${{ inputs.branch }}
+      
+      - name: Install bun
+        uses: oven-sh/setup-bun@v1
+      - name: Install dependencies
+        run: bun install
+     
+
+      - name: 🏗 Bump App Version
+        id: bump-app-version
+        run: bun version $TYPE
+        env:
+          TYPE: ${{ inputs.type }}
+      
