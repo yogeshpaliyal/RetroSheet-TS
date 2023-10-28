@@ -15,11 +15,6 @@ on:
         - preminor
         - prepatch
         - prerelease
-      branch:
-        description: 'Branch'
-        required: true
-        type: string
-        default: 'master'
     
 jobs:
   bump:
@@ -27,18 +22,28 @@ jobs:
     steps:
       - name: 🏗 Checkout Branch
         uses: actions/checkout@v4
-        with:
-          ref: ${{ inputs.branch }}
       
       - name: Install bun
         uses: oven-sh/setup-bun@v1
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+        
       - name: Install dependencies
         run: bun install
      
-
-      - name: 🏗 Bump App Version
-        id: bump-app-version
-        run: bun version $TYPE
+      - name: 🪜 Bump App Version
+        id: bump-version
+        run: npm version $TYPE
         env:
           TYPE: ${{ inputs.type }}
+
+      - name: 🚀 Publish App Version
+        id: publish-version
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
       
