@@ -15,11 +15,6 @@ on:
         - preminor
         - prepatch
         - prerelease
-      branch:
-        description: 'Branch'
-        required: true
-        type: string
-        default: 'master'
     
 jobs:
   bump:
@@ -27,8 +22,6 @@ jobs:
     steps:
       - name: 🏗 Checkout Branch
         uses: actions/checkout@v4
-        with:
-          ref: ${{ inputs.branch }}
       
       - name: Install bun
         uses: oven-sh/setup-bun@v1
